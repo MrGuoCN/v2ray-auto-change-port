@@ -1,11 +1,12 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 const uint16_t MAX_PORT_NUMBER = 65535;
 
 // Find the port number
-uint16_t FindPortNum(std::string str);
+int FindPortNum(std::string str);
 
 int main() {
     std::fstream file;
@@ -30,7 +31,8 @@ int main() {
             exit(EXIT_FAILURE);
         }
     }
-    auto port_num = FindPortNum(port_field);
+    int port_num = -1;
+    port_num = FindPortNum(port_field);
     if (port_num == -1) {
         std::cerr << "Error: Not found port number!" << std::endl;
         exit(EXIT_FAILURE);
@@ -46,9 +48,10 @@ int main() {
     file.seekp(port_field_pos, std::ios::beg);
     file << R"("port": )" << port_num << ",";
     file.close();
+    system("systemctl restart v2ray"); 
 }
 
-uint16_t FindPortNum(std::string str) {
+int FindPortNum(std::string str) {
     std::string port_num_str;
     int port_num = -1;
     for (size_t i = 0; i < str.size(); ++i) {
