@@ -1,0 +1,3 @@
+/home/guo/code/cpp/v2ray-auto-change-port/build/CMakeFiles/v2ray-auto-change-port.dir
+/home/guo/code/cpp/v2ray-auto-change-port/build/CMakeFiles/edit_cache.dir
+/home/guo/code/cpp/v2ray-auto-change-port/build/CMakeFiles/rebuild_cache.dir

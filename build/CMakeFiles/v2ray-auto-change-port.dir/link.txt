@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic "CMakeFiles/v2ray-auto-change-port.dir/src/main.cpp.o" -o /home/guo/code/cpp/v2ray-auto-change-port/bin/v2ray-auto-change-port 
